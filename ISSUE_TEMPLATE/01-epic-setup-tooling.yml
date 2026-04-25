@@ -1,0 +1,46 @@
+name: "🏗️ EPIC: Setup Project Tooling"
+description: "Настройка инструментов разработки, CI/CD, линтеров, форматтеров и сборки"
+title: "[EPIC] Setup Project Tooling"
+labels: ["epic", "chore", "tooling"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🏗️ Настройка инструментов проекта
+        Этот EPIC охватывает все задачи по подготовке окружения.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Описание
+      value: |
+        **Цель:** Создать стабильное окружение для разработки.
+        **Что входит:**
+        - Инициализация проекта (package.json и т.д.)
+        - Настройка линтеров (ESLint / Prettier)
+        - Git hooks (Husky + lint-staged)
+        - Переменные окружения (.env)
+        - Базовая структура папок
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: subtasks
+    attributes:
+      label: Подзадачи
+      options:
+        - label: "Инициализация проекта и менеджер пакетов"
+        - label: "Настройка линтера (ESLint / Ruff / Pylint)"
+        - label: "Настройка форматтера (Prettier / Black)"
+        - label: "Настройка pre-commit хуков"
+        - label: "Настройка переменных окружения"
+        - label: "Обновление README с инструкциями"
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Критерии приемки
+      value: |
+        - [ ] Любой разработчик клонирует репозиторий и запускает проект одной командой
+        - [ ] Код автоматически форматируется при коммите
+        - [ ] Линтер проверяет качество кода в CI
