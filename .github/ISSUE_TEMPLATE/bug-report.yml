@@ -1,0 +1,77 @@
+name: "🐞 Bug Report"
+description: "Сообщите об ошибке, чтобы помочь нам улучшить проект"
+title: "[BUG]: "
+labels: ["bug", "needs-triage"]
+assignees:
+  - username1
+  - username2
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Спасибо, что сообщаете об ошибке!
+        Пожалуйста, заполните информацию ниже.
+
+  - type: checkboxes
+    id: existing-issue
+    attributes:
+      label: Проверка существующих Issue
+      description: Убедитесь, что подобная проблема ещё не была зарегистрирована
+      options:
+        - label: Я проверил(а), что подобного Issue ещё нет
+          required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Описание проблемы
+      description: Чётко опишите, в чём заключается проблема
+      placeholder: "Пример: При нажатии на кнопку 'Сохранить' происходит вылет приложения..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Шаги для воспроизведения
+      description: Опишите последовательность действий, которая приводит к проблеме
+      placeholder: |
+        1. Запустите приложение
+        2. Перейдите в раздел "Настройки"
+        3. Нажмите кнопку "Сохранить"
+        4. Увидите ошибку...
+      render: bash
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Ожидаемое поведение
+      description: Что должно было произойти вместо этого?
+      placeholder: "Приложение должно сохранить настройки без ошибок"
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Окружение
+      description: Укажите информацию о вашей системе
+      value: |
+        - ОС: 
+        - Браузер: 
+        - Версия Node.js: 
+        - Другое:
+      render: markdown
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Логи ошибки
+      description: Вставьте любые релевантные логи (они будут автоматически отформатированы)
+      render: shell
+    validations:
+      required: false
