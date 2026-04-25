@@ -1,0 +1,68 @@
+name: "⚙️ EPIC: Job Management"
+description: "Система управления задачами: очереди, выполнение, мониторинг"
+title: "[EPIC] Job Management"
+labels: ["epic", "jobs", "queue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ⚙️ Управление задачами (Job Management)
+        Асинхронная обработка задач с очередями и воркерами.
+
+  - type: dropdown
+    id: queue_system
+    attributes:
+      label: Система очередей
+      options:
+        - "BullMQ + Redis"
+        - "RabbitMQ"
+        - "Celery + Redis"
+        - "AWS SQS"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Функциональность
+      value: |
+        - Создание задач через API
+        - Приоритеты задач
+        - Отложенный запуск
+        - Статус задачи (pending, active, completed, failed)
+        - Повторные попытки при ошибках
+        - Мониторинг очередей
+
+  - type: textarea
+    id: job_types
+    attributes:
+      label: Типы задач (примеры)
+      placeholder: |
+        - Отправка email
+        - Генерация отчётов
+        - Обработка файлов
+        - Периодические задачи (cron)
+
+  - type: checkboxes
+    id: subtasks
+    attributes:
+      label: Подзадачи
+      options:
+        - label: "Модель Job в БД"
+        - label: "Настройка очереди (Redis + BullMQ)"
+        - label: "JobService (CRUD)"
+        - label: "Worker для выполнения задач"
+        - label: "API для задач (POST, GET, DELETE)"
+        - label: "Механизм повторных попыток"
+        - label: "Метрики и мониторинг"
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Критерии приемки
+      value: |
+        - [ ] Задача создаётся через API и попадает в очередь
+        - [ ] Воркер выполняет задачу, статус обновляется
+        - [ ] При ошибке задача повторяется (до N раз)
+        - [ ] Можно просмотреть статус и результат задачи
+        - [ ] Есть метрики (Grafana / логи)
