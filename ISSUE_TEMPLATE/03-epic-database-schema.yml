@@ -1,0 +1,56 @@
+name: "🗄️ EPIC: Database Schema"
+description: "Проектирование схемы БД, миграции и настройка ORM"
+title: "[EPIC] Database Schema"
+labels: ["epic", "database", "schema"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🗄️ Схема базы данных
+        Создание структуры данных, миграций и подключения.
+
+  - type: dropdown
+    id: db_type
+    attributes:
+      label: Тип БД
+      options:
+        - "PostgreSQL"
+        - "MySQL"
+        - "MongoDB"
+        - "SQLite"
+    validations:
+      required: true
+
+  - type: textarea
+    id: entities
+    attributes:
+      label: Сущности
+      description: Перечислите основные сущности и их поля
+      placeholder: |
+        User: id, email, password_hash, created_at
+        Job: id, user_id, title, status, created_at
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: subtasks
+    attributes:
+      label: Подзадачи
+      options:
+        - label: "Создание ER-диаграммы"
+        - label: "Настройка подключения к БД (pool)"
+        - label: "Инициализация ORM"
+        - label: "Создание миграции для всех таблиц"
+        - label: "Создание моделей/схем"
+        - label: "Настройка индексов и внешних ключей"
+        - label: "Создание сидов (seed data)"
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Критерии приемки
+      value: |
+        - [ ] Миграции применяются и откатываются без ошибок
+        - [ ] Все отношения настроены корректно
+        - [ ] Сиды создают тестовые данные
+        - [ ] Проект подключается к БД через переменные окружения
