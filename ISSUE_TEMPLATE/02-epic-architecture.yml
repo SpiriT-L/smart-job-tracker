@@ -1,0 +1,58 @@
+name: "🏛️ EPIC: Project Architecture"
+description: "Проектирование и реализация базовой архитектуры приложения"
+title: "[EPIC] Project Architecture"
+labels: ["epic", "architecture"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🏛️ Архитектура проекта
+        Создание фундамента, на котором будет строиться приложение.
+
+  - type: dropdown
+    id: pattern
+    attributes:
+      label: Архитектурный паттерн
+      options:
+        - "MVC"
+        - "Clean Architecture"
+        - "Feature-Sliced Design"
+        - "Layered (Presentation → Domain → Data)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Описание
+      value: |
+        **Цель:** Создать масштабируемую и тестируемую архитектуру.
+        **Компоненты:**
+        - Структура папок
+        - Маршрутизация
+        - Слой сервисов (бизнес-логика)
+        - Слой репозиториев (доступ к данным)
+        - Глобальная обработка ошибок
+        - Внедрение зависимостей
+
+  - type: checkboxes
+    id: subtasks
+    attributes:
+      label: Подзадачи
+      options:
+        - label: "Создание структуры директорий"
+        - label: "Настройка маршрутизации"
+        - label: "Реализация базового сервисного слоя"
+        - label: "Реализация репозиториев с интерфейсами"
+        - label: "Глобальный обработчик ошибок"
+        - label: "Документирование архитектуры (ARCHITECTURE.md)"
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Критерии приемки
+      value: |
+        - [ ] Все слои четко разделены
+        - [ ] Нет циклических зависимостей
+        - [ ] Добавление новой фичи не ломает старые слои
+        - [ ] Есть диаграмма архитектуры
