@@ -1,0 +1,52 @@
+name: "✨ Feature Request"
+description: "Предложите новую функциональность или улучшение"
+title: "[FEATURE]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Спасибо за ваше предложение!
+        Расскажите, как мы можем сделать проект лучше.
+
+  - type: checkboxes
+    id: existing-feature
+    attributes:
+      label: Проверка существующих предложений
+      options:
+        - label: Я проверил(а), что подобное предложение ещё не обсуждалось
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Какую проблему решает ваше предложение?
+      description: Опишите ситуацию, которая требует улучшения
+      placeholder: "Меня не устраивает, что... Мне не хватает функциональности..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Предлагаемое решение
+      description: Как вы видите реализацию этой функциональности?
+      placeholder: "Было бы здорово, если бы добавили..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Альтернативные решения
+      description: Какие ещё варианты вы рассматривали?
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Дополнительный контекст
+      description: Скриншоты, ссылки, примеры кода — всё, что поможет понять ваше предложение
+    validations:
+      required: false
