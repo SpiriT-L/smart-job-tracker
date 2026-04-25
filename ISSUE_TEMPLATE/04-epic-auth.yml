@@ -1,0 +1,66 @@
+name: "🔐 EPIC: Authentication & Authorization"
+description: "Регистрация, вход, управление сессиями и ролями"
+title: "[EPIC] Authentication System"
+labels: ["epic", "auth", "security"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🔐 Аутентификация и авторизация
+        Полноценная система безопасности.
+
+  - type: dropdown
+    id: auth_type
+    attributes:
+      label: Тип аутентификации
+      options:
+        - "JWT (Access + Refresh tokens)"
+        - "Session-based"
+        - "OAuth 2.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Функциональные требования
+      value: |
+        - Регистрация и логин
+        - Выход (логаут)
+        - Refresh token механизм
+        - Восстановление пароля
+        - Подтверждение email
+        - Ролевая модель (RBAC)
+
+  - type: textarea
+    id: roles
+    attributes:
+      label: Роли и разрешения
+      placeholder: |
+        admin - полный доступ
+        user - базовый доступ
+        guest - только чтение
+
+  - type: checkboxes
+    id: subtasks
+    attributes:
+      label: Подзадачи
+      options:
+        - label: "Модель User (поля, валидация)"
+        - label: "Хеширование паролей (bcrypt)"
+        - label: "Регистрация и логин"
+        - label: "JWT middleware"
+        - label: "RBAC middleware"
+        - label: "Восстановление пароля"
+        - label: "Подтверждение email"
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Критерии приемки
+      value: |
+        - [ ] Пользователь может зарегистрироваться и войти
+        - [ ] Неавторизованный доступ возвращает 401
+        - [ ] Разные роли имеют разные права
+        - [ ] Refresh token работает
+        - [ ] Пароли хранятся в захешированном виде
