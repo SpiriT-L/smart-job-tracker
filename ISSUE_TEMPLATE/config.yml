@@ -1,8 +1,0 @@
-blank_issues_enabled: false
-contact_links:
-  - name: 📖 Документация проекта
-    url: https://github.com/ваш-репозиторий/wiki
-    about: Изучите документацию перед созданием Issue
-  - name: 💬 Обсуждение в чате
-    url: https://t.me/ваш_чат
-    about: Задайте вопросы в нашем Telegram

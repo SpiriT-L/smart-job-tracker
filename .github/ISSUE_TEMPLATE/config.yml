@@ -1,11 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: 📖 Документация
-    url: https://github.com/your-repo/docs
-    about: Изучите официальную документацию
-  - name: 💬 Discord/Telegram/Slack
-    url: https://discord.gg/your-server
-    about: Присоединяйтесь к нашему сообществу для обсуждений
-  - name: 🔒 Сообщить о безопасности
-    url: https://github.com/your-repo/security/advisories/new
-    about: Пожалуйста, сообщайте о уязвимостях безопасности через эту форму
+  - name: 📖 Документация проекта
+    url: https://github.com/ваш-репозиторий/wiki
+    about: Изучите документацию перед созданием Issue
+  - name: 💬 Обсуждение в чате
+    url: https://t.me/ваш_чат
+    about: Задайте вопросы в нашем Telegram
