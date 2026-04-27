@@ -21,6 +21,7 @@ export default [
       ...reactPlugin.configs.recommended.rules,
       ...hooksPlugin.configs.recommended.rules,
       ...nextPlugin.configs.recommended.rules,
+      'react/react-in-jsx-scope': 'off',
     },
     settings: {
       react: {
