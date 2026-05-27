@@ -17,9 +17,12 @@ model User {
   id           String        @id @default(cuid())
 
   email        String        @unique
+  password     String
+
   name         String?
 
   applications Application[]
+  sessions     Session[]
 
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
@@ -57,4 +60,18 @@ model Application {
 
   createdAt    DateTime            @default(now())
   updatedAt    DateTime            @updatedAt
+}
+
+model Session {
+  id           String   @id @default(cuid())
+
+  sessionToken String   @unique
+
+  userId       String
+  user         User     @relation(fields: [userId], references: [id])
+
+  expiresAt    DateTime
+
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
