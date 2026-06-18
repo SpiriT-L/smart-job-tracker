@@ -1,3 +1,4 @@
+import bcrypt from 'bcrypt';
 import { prisma } from '@/shared/api/prisma';
 
 export async function POST(request: Request) {
@@ -28,4 +29,21 @@ export async function POST(request: Request) {
       { status: 401 },
     );
   }
+
+  const isMatch = await bcrypt.compare(password, user.password);
+
+  if (!isMatch) {
+    return Response.json(
+      {
+        message: 'Invalid credentials',
+      },
+      { status: 401 },
+    );
+  }
+
+  return Response.json({
+    id: user.id,
+    email: user.email,
+    name: user.name,
+  });
 }
