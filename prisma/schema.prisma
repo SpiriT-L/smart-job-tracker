@@ -13,6 +13,11 @@ enum ApplicationStatus {
   REJECTED
 }
 
+enum Role {
+  USER
+  ADMIN
+}
+
 model User {
   id           String        @id @default(cuid())
 
@@ -20,6 +25,8 @@ model User {
   password     String
 
   name         String?
+
+  role Role @default(USER)
 
   applications Application[]
   sessions     Session[]
